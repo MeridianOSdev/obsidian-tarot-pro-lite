@@ -1,0 +1,10 @@
+{
+  "name": "TarotProLite",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "author": "MeridianOSdev",
+  "authorUrl": "https://MeridianOS.dev",
+  "description": "A soft feminine tarot-inspired Obsidian theme with lavender glow, moonlight gradients, mystical callouts and premium card styling.",
+  "theme": true,
+  "css": "theme.css"
+}
