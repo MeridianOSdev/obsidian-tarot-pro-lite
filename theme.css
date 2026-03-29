@@ -1,0 +1,394 @@
+/* ---------------------------------------------------------------------------
+
+Tarot Pro Lite by MeridianOSdev
+
+A soft and mystical Obsidian theme designed for tarot notes,
+spreads, feminine journals, intuition work, moon rituals,
+and magical knowledge systems.
+
+Inspired by premium tarot apps, lavender moonlight,
+and dreamy mystical interfaces.
+
+Distinct from:
+- Second Brain Lite → clean productivity
+- Taoist Lite → ancient, solemn, traditional
+- Tarot Pro Lite → soft, glowing, feminine, magical
+
+Author:
+https://MeridianOS.dev
+
+Repository:
+https://github.com/MeridianOSdev/obsidian-tarot-pro-lite
+
+License: MIT
+
+Copyright (c) 2026 MeridianOSdev
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------- */
+
+/* ==========================================================================
+   TAROT PRO LITE
+   ========================================================================== */
+
+.theme-dark {
+  --background-primary: #140f24;
+  --background-primary-alt: #1a1430;
+  --background-secondary: #1e1735;
+  --background-secondary-alt: #241c40;
+
+  --background-modifier-border: rgba(205, 180, 255, 0.16);
+  --background-modifier-hover: rgba(185, 160, 255, 0.08);
+
+  --text-normal: #efe9ff;
+  --text-muted: #b8add8;
+  --text-faint: #8f82b5;
+  --text-accent: #decfff;
+  --interactive-accent: #a88cff;
+  --interactive-accent-hover: #c6b1ff;
+
+  --tarot-purple: #b59cff;
+  --tarot-lavender: #ddd1ff;
+  --tarot-pink: #f4d6ea;
+  --tarot-silver: #f6f2ff;
+  --tarot-gold: #e9dbbf;
+
+  --tarot-card: rgba(40, 30, 66, 0.82);
+  --tarot-card-strong: rgba(53, 41, 84, 0.92);
+  --tarot-border: rgba(205, 180, 255, 0.18);
+
+  --tarot-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(190, 160, 255, 0.10);
+
+  --radius-s: 12px;
+  --radius-m: 18px;
+  --radius-l: 26px;
+}
+
+/* ==========================================================================
+   APP BACKGROUND
+   ========================================================================== */
+
+.workspace,
+.workspace-split,
+.mod-root,
+.view-content {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(210,180,255,.08), transparent 20%),
+    radial-gradient(circle at 82% 16%, rgba(255,210,235,.06), transparent 18%),
+    radial-gradient(circle at 50% 100%, rgba(130,100,255,.12), transparent 35%),
+    linear-gradient(180deg, #181126 0%, #120d1d 100%);
+}
+
+.markdown-reading-view,
+.markdown-source-view {
+  position: relative;
+}
+
+.markdown-reading-view::before,
+.markdown-source-view::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .18;
+  background-image:
+    radial-gradient(circle at 15% 20%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 35% 80%, #ddd1ff 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 38%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 88% 18%, #f4d6ea 0 1px, transparent 2px),
+    radial-gradient(circle at 62% 74%, #fff 0 1.2px, transparent 2px);
+}
+
+.view-content::after {
+  content: "☾";
+  position: fixed;
+  font-size: 34px;
+  top: 20px;
+  right: 30px;
+  opacity: .7;
+  color: rgba(255,255,255,.28);
+  text-shadow: 0 0 18px rgba(220,200,255,.35);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
+
+.workspace-ribbon,
+.workspace-sidedock,
+.workspace-tab-header-container,
+.nav-files-container,
+.workspace-tabs {
+  background: rgba(25, 18, 42, 0.88);
+  backdrop-filter: blur(16px);
+}
+
+.nav-file-title,
+.nav-folder-title {
+  margin: 2px 6px;
+  border-radius: 14px;
+  transition: all .22s ease;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover {
+  background: rgba(190, 170, 255, .10);
+  box-shadow: 0 0 16px rgba(190, 160, 255, .10);
+  color: var(--tarot-lavender);
+}
+
+.nav-file-title.is-active {
+  background: linear-gradient(90deg,
+    rgba(180,150,255,.22),
+    rgba(255,210,235,.12));
+  border: 1px solid rgba(205,180,255,.24);
+  box-shadow: 0 0 24px rgba(190,160,255,.14);
+}
+
+/* ==========================================================================
+   NOTE CONTAINER
+   ========================================================================== */
+
+.markdown-preview-view .markdown-preview-sizer {
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.45),
+    0 0 60px rgba(180,150,255,.12);
+}
+
+.markdown-source-view.mod-cm6 .cm-contentContainer {
+  max-width: 920px;
+  margin: 24px auto;
+  padding: 40px;
+
+  background: rgba(28, 20, 44, 0.60);
+  border: 1px solid var(--tarot-border);
+  border-radius: 32px;
+  backdrop-filter: blur(18px);
+  box-shadow: var(--tarot-shadow);
+}
+
+/* ==========================================================================
+   HEADINGS
+   ========================================================================== */
+
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.HyperMD-header {
+  color: var(--tarot-silver);
+  letter-spacing: .03em;
+}
+
+.markdown-rendered h1 {
+  padding: 18px 24px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at center, rgba(150,120,255,.18), transparent 75%),
+    linear-gradient(90deg, rgba(255,220,240,.05), rgba(180,150,255,.08));
+  border: 1px solid rgba(210,190,255,.22);
+  box-shadow: 0 0 22px rgba(190,160,255,.10);
+}
+
+.markdown-rendered h2 {
+  margin-top: 2em;
+  padding: 14px 18px;
+  border-radius: 20px;
+  background: radial-gradient(circle, rgba(120,90,255,.2), transparent);
+  border: 1px solid rgba(180,150,255,.3);
+  color: #d8c9ff;
+  box-shadow: 0 0 18px rgba(180,150,255,.10);
+  font-size: 1.9em;
+  letter-spacing: .04em;
+  text-shadow: 0 0 18px rgba(210,190,255,.22);
+}
+
+.markdown-rendered h3 {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: rgba(180,150,255,.08);
+  border-left: 3px solid rgba(240,210,255,.45);
+}
+
+/* ==========================================================================
+   TEXT / LINKS
+   ========================================================================== */
+
+.markdown-rendered {
+  line-height: 1.9;
+  color: var(--text-normal);
+}
+
+.markdown-rendered a,
+.internal-link {
+  color: #f0d6ff;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(240,210,255,.35);
+}
+
+.markdown-rendered a:hover,
+.internal-link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,210,245,.65);
+}
+
+/* ==========================================================================
+   TAGS
+   ========================================================================== */
+
+.tag,
+.cm-hashtag {
+  background: linear-gradient(135deg,
+    rgba(180,150,255,.18),
+    rgba(255,215,238,.14));
+  color: #ecddff !important;
+  border: 1px solid rgba(205,180,255,.25);
+  border-radius: 999px;
+  padding: 3px 12px;
+  box-shadow: 0 0 10px rgba(180,150,255,.10);
+}
+
+/* ==========================================================================
+   TABLES → TAROT SPREAD STYLE
+   ========================================================================== */
+
+.markdown-rendered table td {
+  min-height: 92px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* Make links inside cards brighter */
+.markdown-rendered table td a {
+  color: #efe5ff;
+  font-weight: 500;
+}
+
+/* Stronger hover effect */
+.markdown-rendered table td:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 22px rgba(190,160,255,.22),
+    0 10px 24px rgba(0,0,0,.25);
+  transition: all .2s ease;
+}
+
+.markdown-rendered table td::before {
+  content: "✦";
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,.18);
+}
+
+.markdown-rendered th,
+.markdown-rendered td {
+  background: linear-gradient(180deg,
+    rgba(45,34,72,.92),
+    rgba(26,20,44,.95));
+  border: 1px solid rgba(205,180,255,.18);
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 0 16px rgba(180,150,255,.08);
+}
+
+.markdown-rendered th {
+  color: var(--tarot-gold);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* ==========================================================================
+   CALLOUTS
+   ========================================================================== */
+
+.callout {
+  border-radius: 24px;
+  border: 1px solid rgba(205,180,255,.18);
+  background: linear-gradient(180deg,
+    rgba(42,30,68,.88),
+    rgba(24,18,42,.92));
+  box-shadow: 0 0 20px rgba(180,150,255,.08);
+}
+
+.callout[data-callout="spread"] {
+  --callout-color: 184,160,255;
+  background:
+    radial-gradient(circle at top right, rgba(220,200,255,.10), transparent 35%),
+    linear-gradient(180deg, rgba(48,36,78,.92), rgba(24,18,42,.95));
+}
+
+.callout[data-callout="reading"] {
+  --callout-color: 255,210,235;
+  background:
+    radial-gradient(circle at top left, rgba(255,220,240,.12), transparent 35%),
+    linear-gradient(180deg, rgba(54,34,68,.92), rgba(30,20,42,.95));
+}
+
+.callout[data-callout="intuition"] {
+  --callout-color: 220,205,255;
+  background:
+    radial-gradient(circle at center, rgba(210,190,255,.12), transparent 55%),
+    linear-gradient(180deg, rgba(36,28,68,.92), rgba(20,16,38,.96));
+  font-style: italic;
+}
+
+/* ==========================================================================
+   CODE
+   ========================================================================== */
+
+code,
+.cm-inline-code,
+pre {
+  border-radius: 14px;
+  background: rgba(30,22,50,.92);
+  border: 1px solid rgba(190,170,255,.18);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  margin: 42px 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(200,180,255,.35),
+    transparent
+  );
+}
+
+/* ==========================================================================
+   SCROLLBAR
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(180deg,
+    rgba(180,150,255,.55),
+    rgba(255,210,235,.45));
+}
