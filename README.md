@@ -16,7 +16,7 @@ manifest.json
 theme.css
 
 4. Open Obsidian → Settings → Appearance → Themes
-Select Tarot Pro Lite
+Select TarotProLite
 
 ## Included Free Dashboard
 
